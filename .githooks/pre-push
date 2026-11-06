@@ -1,0 +1,9 @@
+#!/bin/sh
+# Primeira barreira do protocolo de deploy: nenhum push sem typecheck, lint,
+# testes e build verdes. Ative com: npm run hooks:install
+set -e
+
+echo "pre-push: rodando npm run verify..."
+npm run verify
+
+echo "pre-push: tudo verde, seguindo com o push."
